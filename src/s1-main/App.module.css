@@ -1,0 +1,29 @@
+.App {
+    --header_height: 60px;
+}
+
+.hw {
+    & > div > div > div {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    & > div > div > div > img {
+      width: 50px;
+    }
+    & > div > div > div > div{
+        background-color: rgba(7, 105, 253, 0.856);
+        display: inline-block;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        color: white;
+        padding: 10px
+    }
+  }
+
+.hwTitle {
+    font-size: large;
+    font-weight: 700;
+    line-height: 2.5rem;
+}
