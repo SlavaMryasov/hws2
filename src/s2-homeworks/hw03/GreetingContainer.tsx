@@ -45,6 +45,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         setName(e.currentTarget.value) // need to fix
 
         error && setError('имя должно содержать буквы')
+        if (e.currentTarget.value.trim() !== '') { setError('') }
     }
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback)
