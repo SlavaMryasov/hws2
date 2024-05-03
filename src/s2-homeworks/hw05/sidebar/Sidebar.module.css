@@ -8,17 +8,22 @@
 }
 
 .nav {
+    background-color: rgb(255, 222, 248);
 }
 
 .nav a {
+    margin: 10px;
 }
 
 .nav a:hover {
 }
 
 .nav a.active {
+    background-color: rgb(44, 180, 123);
 }
 .close {
+   
+
 }
 
 .close img {
