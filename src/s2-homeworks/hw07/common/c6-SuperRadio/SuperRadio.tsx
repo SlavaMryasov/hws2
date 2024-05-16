@@ -35,7 +35,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     ...restProps
 }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        // делают студенты
+        onChangeOption &&
+            onChangeOption(+e.currentTarget.id.split('-')[4])
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
@@ -43,25 +44,28 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 
     const mappedOptions: any[] = options
         ? options.map((o) => (
-              <label key={name + '-' + o.id} className={s.label}>
-                  <input
-                      id={id + '-input-' + o.id}
-                      className={finalRadioClassName}
-                      type={'radio'}
-                      // name, checked, value делают студенты
+            <label key={name + '-' + o.id} className={s.label}>
+                <input
+                    id={id + '-input-' + o.id}
+                    className={finalRadioClassName}
+                    type={'radio'}
+                    // name, checked, value делают студенты
+                    name={'option'}
+                    checked={value === o.id}
 
-                      onChange={onChangeCallback}
-                      {...restProps}
-                  />
-                  <span
-                      id={id + '-span-' + o.id}
-                      {...spanProps}
-                      className={spanClassName}
-                  >
-                      {o.value}
-                  </span>
-              </label>
-          ))
+                    value={value}
+                    onChange={onChangeCallback}
+                    {...restProps}
+                />
+                <span
+                    id={id + '-span-' + o.id}
+                    {...spanProps}
+                    className={spanClassName}
+                >
+                    {o.value}
+                </span>
+            </label>
+        ))
         : []
 
     return <div className={s.options}>{mappedOptions}</div>
