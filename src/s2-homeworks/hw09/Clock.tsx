@@ -43,7 +43,7 @@ function Clock() {
 
     // }
     const stringTime = `${time(date.getHours())}:${time(date.getMinutes())}:${time(date.getSeconds())}` || <br /> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = `${time(date.getDay())}.${time(date.getMonth())}.${time(date.getFullYear())}` || <br />
+    const stringDate = `${time(date.getDate())}.${time(date.getMonth() + 1)}.${time(date.getFullYear())}` || <br />
     // const stringDate = date.toLocaleDateString()
 
     // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
