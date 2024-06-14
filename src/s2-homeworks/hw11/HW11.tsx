@@ -15,32 +15,17 @@ function HW11() {
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
-    // const change = (event: any, value: any) => {
-    //     console.log(value)
-    //     if (typeof value === 'number') {
-    //         setValue1(value)
-    //     } else {
-    //         setValue1(value[0])
-    //         setValue2(value[1])
-    //     }
-
-    //     // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
-    // }
     const change = (event: any, value: any) => {
-        if (event.target.name === 's1') {
-            setValue1(value)
-        } else if (event.target.name === 's2' && value.length >= 2) {
-            if (value[0] < value[1]) {
-                console.log('set')
+        console.log(value)
+        if (value1 <= value2)
+            if (event.name === 's1') {
+                setValue1(value)
+            } else {
                 setValue1(value[0])
                 setValue2(value[1])
-            } else {
-                console.error('Invalid values: The first value should be less than the second value.')
             }
-        } else {
-            console.error('Invalid input: Expected a number or an array with at least two elements.')
-        }
     }
+
 
     return (
         <div id={'hw11'}>
