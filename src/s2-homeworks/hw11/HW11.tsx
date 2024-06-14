@@ -15,16 +15,28 @@ function HW11() {
     const [value1, setValue1] = useState(restoreState<number>('hw11-value1', 0))
     const [value2, setValue2] = useState(restoreState<number>('hw11-value2', 100))
 
+    // const change = (event: any, value: any) => {
+    //     console.log(value)
+    //     if (typeof value === 'number') {
+    //         setValue1(value)
+    //     } else {
+    //         setValue1(value[0])
+    //         setValue2(value[1])
+    //     }
+
+    //     // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
+    // }
+
     const change = (event: any, value: any) => {
-        console.log(event)
+        // console.log(event.target.name)
+        console.log(value)
         if (typeof value === 'number') {
             setValue1(value)
-        } else {
+        } else if (value[0] < value[1]) {
+            console.log('set')
             setValue1(value[0])
             setValue2(value[1])
         }
-
-        // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
     }
 
     return (
