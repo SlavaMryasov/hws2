@@ -26,16 +26,19 @@ function HW11() {
 
     //     // пишет студент // если пришёл массив - сохранить значения в оба useState, иначе в первый
     // }
-
     const change = (event: any, value: any) => {
-        // console.log(event.target.name)
-        console.log(value)
-        if (typeof value === 'number') {
+        if (event.target.name === 's1') {
             setValue1(value)
-        } else if (value[0] < value[1]) {
-            console.log('set')
-            setValue1(value[0])
-            setValue2(value[1])
+        } else if (event.target.name === 's2' && value.length >= 2) {
+            if (value[0] < value[1]) {
+                console.log('set')
+                setValue1(value[0])
+                setValue2(value[1])
+            } else {
+                console.error('Invalid values: The first value should be less than the second value.')
+            }
+        } else {
+            console.error('Invalid input: Expected a number or an array with at least two elements.')
         }
     }
 
