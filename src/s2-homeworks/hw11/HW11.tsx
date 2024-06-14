@@ -17,7 +17,7 @@ function HW11() {
 
     const change = (event: any, value: any) => {
         console.log(value)
-        if (value1 <= value2)
+        if (value1 !== value2)
             if (event.name === 's1') {
                 setValue1(value)
             } else {
